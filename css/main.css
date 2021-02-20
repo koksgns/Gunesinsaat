@@ -1,12 +1,13 @@
+body{
+    background-color: blanchedalmond;
+}
 .altcizgikaldir{
     text-decoration: none;
 }
 .paylasimimg{
     width: 300px;
     margin: 5% !important;
-    border: 1px solid black;
 }
-
 .paylasiimgdiv{
     justify-content:center;
     align-items: center;
