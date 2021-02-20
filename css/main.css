@@ -1,3 +1,19 @@
 .altcizgikaldir{
     text-decoration: none;
 }
+.paylasimimg{
+    width: 300px;
+    margin: 5% !important;
+    border: 1px solid black;
+}
+
+.paylasiimgdiv{
+    justify-content:center;
+    align-items: center;
+}
+.paylasimdiv{
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
