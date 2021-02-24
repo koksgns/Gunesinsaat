@@ -5,13 +5,17 @@ body{
     padding-left: 5%  !important;
 }
 
+.navbardetay{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 
 .altcizgikaldir{
     text-decoration: none;
 }
 .paylasimimg{
-    width: 300px;
-    margin: 5% !important;
+    width: 250px  !important;
 }
 .paylasiimgdiv{
     justify-content:center;
@@ -100,4 +104,19 @@ body{
     border-radius: 30px;
     width: 100%;
 
+}
+
+
+.projedetayfotolar img{
+    width: 250px;
+}
+.projedetaybaslik{
+    background-color: rgb(174, 187, 53);
+    border-radius: 20px;
+}
+
+
+
+.giris{
+    border-radius: 50px;
 }

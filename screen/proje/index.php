@@ -7,7 +7,7 @@
     <title>Güneş İnşaat</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 <body>
@@ -15,23 +15,26 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #529dd3;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Güneş İnşaat</a>
+          <a class="navbar-brand" href="index.php">Güneş İnşaat</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.html">Anasayfa</a>
+                <a class="nav-link" aria-current="page" href="../index.php">Anasayfa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="projeler.html">Projeler</a>
+                <a class="nav-link active" href="index.php">Projeler</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="hakkinda.html">Hakkımızda</a>
+                <a class="nav-link" href="../hakkinda.php">Hakkımızda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="iletisim.html">İletişim</a>
+                <a class="nav-link" href="../iletisim.php">İletişim</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin/">Giriş Yap</a>
               </li>
             </ul>
             <span class="navbar-text">
@@ -53,25 +56,54 @@
      
       <div class="row m-5 justify-content-between">
         <h1 class="text-center">Devam Eden Projeler</h1>
+       
         <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay.html">
+          <a class="altcizgikaldir" href="projedetay/">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../images/news/500x500.png" class="projeimages" alt="">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
             </div>
             <div class="col-12 col-xl-6 text-center p-3 text-dark">
               <h2>İŞ</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
             </div>
           </div>
-          </a>
+        </a>
         </div>
 
         <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay.html">
+          <a class="altcizgikaldir" href="projedetay/">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../images/news/500x500.png" class="projeimages" alt="">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
+            </div>
+            <div class="col-12 col-xl-6 text-center p-3 text-dark">
+              <h2>İŞ</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
+            </div>
+          </div>
+        </a>
+        </div>
+
+        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
+          <a class="altcizgikaldir" href="projedetay/">
+          <div class="row p-2">
+            <div class="col-12 text-center text-lg-left  col-xl-6">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
+            </div>
+            <div class="col-12 col-xl-6 text-center p-3 text-dark">
+              <h2>İŞ</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
+            </div>
+          </div>
+        </a>
+        </div>
+
+        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
+          <a class="altcizgikaldir" href="projedetay/">
+          <div class="row p-2">
+            <div class="col-12 text-center text-lg-left  col-xl-6">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
             </div>
             <div class="col-12 col-xl-6 text-center p-3 text-dark">
               <h2>İŞ</h2>
@@ -82,19 +114,6 @@
         </div>
 
 
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay.html">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
       </div>
     </div>
 
@@ -104,11 +123,13 @@
       
       <div class="row m-5 justify-content-between">
         <h1 class="text-center">Tamamlanmış Projeler</h1>
+        
+
         <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay.html">
+          <a class="altcizgikaldir" href="projedetay/">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../images/news/500x500.png" class="projeimages" alt="">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
             </div>
             <div class="col-12 col-xl-6 text-center p-3 text-dark">
               <h2>İŞ</h2>
@@ -119,10 +140,10 @@
         </div>
 
         <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay.html">
+          <a class="altcizgikaldir" href="projedetay/">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../images/news/500x500.png" class="projeimages" alt="">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
             </div>
             <div class="col-12 col-xl-6 text-center p-3 text-dark">
               <h2>İŞ</h2>
@@ -134,10 +155,10 @@
 
 
         <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay.html">
+          <a class="altcizgikaldir" href="projedetay/">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../images/news/500x500.png" class="projeimages" alt="">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
             </div>
             <div class="col-12 col-xl-6 text-center p-3 text-dark">
               <h2>İŞ</h2>
@@ -146,6 +167,51 @@
           </div>
         </a>
         </div>
+
+        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
+          <a class="altcizgikaldir" href="projedetay/">
+          <div class="row p-2">
+            <div class="col-12 text-center text-lg-left  col-xl-6">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
+            </div>
+            <div class="col-12 col-xl-6 text-center p-3 text-dark">
+              <h2>İŞ</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
+            </div>
+          </div>
+        </a>
+        </div>
+
+        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
+          <a class="altcizgikaldir" href="projedetay/">
+          <div class="row p-2">
+            <div class="col-12 text-center text-lg-left  col-xl-6">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
+            </div>
+            <div class="col-12 col-xl-6 text-center p-3 text-dark">
+              <h2>İŞ</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
+            </div>
+          </div>
+        </a>
+        </div>
+
+        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
+          <a class="altcizgikaldir" href="projedetay/">
+          <div class="row p-2">
+            <div class="col-12 text-center text-lg-left  col-xl-6">
+              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
+            </div>
+            <div class="col-12 col-xl-6 text-center p-3 text-dark">
+              <h2>İŞ</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
+            </div>
+          </div>
+        </a>
+        </div>
+
+        
+
       </div>
     </div>
 
@@ -164,52 +230,10 @@
 
     </div>
 
-     <!--FOOTER-->
-     <footer class="bg-dark pt-5 ">
-      <div class="container text-white">
-          <div class="row">
-              <div class="col-md-4">
-                 <a href="#" class="navbar-brand footer-brand"><img src="../images/logo/logo.png"></a>
-              </div>
-              <div class="col-md-2 mt-3">
-                  <ul class="list-unstyled">
-                      <li class="mb-3 text-muted"><small>Şirket</small></li>
-                      <li><a href="index.html" class="text-white footer-text altcizgikaldir"> Anasayfa</li></a>
-                      <li><a href="projeler.html" class="text-white footer-text altcizgikaldir"> Projeler</li></a>
-                      <li><a href="hakkinda.html" class="text-white footer-text altcizgikaldir"> Hakkımızda</li></a>
-                      <li><a href="iletisim.html" class="text-white footer-text altcizgikaldir"> İletişim</li></a>
-                  </ul>
-              </div>
-              <div class="col-md-2 mt-3">
-                  <ul class="list-unstyled">
-                      <li class="mb-3 text-muted"><small>Projeler</small></li>
-                      <li><a href="#" class="text-white footer-text altcizgikaldir"> Son Projler 1</li></a>
-                      <li><a href="#" class="text-white footer-text altcizgikaldir"> Son Projler 2</li></a>
-                      <li><a href="#" class="text-white footer-text altcizgikaldir"> Son Projler 3</li></a>
-                      <li><a href="#" class="text-white footer-text altcizgikaldir"> Son Projler 4</li></a>
-                  </ul>
-              </div>
-              <div class="col-md-2 mt-3">
-                <ul class="list-unstyled">
-                    <li class="mb-3 text-muted"><small>Blog</small></li>
-                    <li><a href="#" class="text-white footer-text altcizgikaldir"> Blog 1</li></a>
-                    <li><a href="#" class="text-white footer-text altcizgikaldir"> Blog 2</li></a>
-                    <li><a href="#" class="text-white footer-text altcizgikaldir"> Blog 3</li></a>
-                    <li><a href="#" class="text-white footer-text altcizgikaldir"> Blog 4</li></a>  
-                </ul>
-            </div>
-              <div class="col-md-2 mt-3 text-end social-logo">
-                  <a href="#" class="text-white footer-text"><i class="fab fa-facebook-f fa-2x me-3"></i></a>
-                  <a href="#" class="text-white footer-text"> <i class="fab fa-twitter fa-2x me-3"></i></a>
-                  <a href="www.google.com" class="text-white footer-text"> <i class="fab fa-instagram fa-2x me-3"></i></a>
-              </div>
-              <div class="clearfix text-muted text-center">
-                  <p style="font-size: 14px; margin-top: 10px;" class="mb-0">Güneş İnşaat © Tüm Hakları Saklıdır.</p>
-              </div>
-          </div>
-        </div>
-    </footer>
-
+ <!--FOOTER-->
+ <?php
+    require("footer.php");
+  ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
