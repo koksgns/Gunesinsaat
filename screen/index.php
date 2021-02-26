@@ -1,3 +1,13 @@
+<?php
+  require("../PHP/gereksinimler.php");
+  $SORGU1		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  projeler LIMIT 5"); 
+  $SORGU1->execute();
+  $SORGUSAYISI1		=	$SORGU1->rowCount();
+  $SORGULAR1	=	$SORGU1->fetchAll(PDO::FETCH_ASSOC);
+  $SORGULAR1 = array_reverse($SORGULAR1);
+?>
+
+
 <!DOCTYPE html>
 <html lang="TR-tr">
 <head>
@@ -86,20 +96,32 @@
       <br><br><br>
 
       <div class="container">
-        <div class="text-center">
-          <h1>Son Yapılar</h1>
+        <div >
+          <h1 class="text-center">Son Yapılar</h1>
+          <p class="dahaFazla pt-2">Daha fazlası için <a href="proje">tıklayınız</a>.</p>
         </div>
+
+        <?php
+            foreach($SORGULAR1 as $Sorgu){
+        ?>
+
+
         <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
         
         <div class="row w-75 mx-auto" >
-          <div class="col-md-2">
-            <img class="rounded mx-auto d-block" src="../images/news/100X100.png" alt="Generic placeholder image">
+          <div class="col-md-2 AnsayafaSonYapilar">
+            <img class="rounded mx-auto d-block" src="../images/proje/<?=$Sorgu["projeimg1"] ?>" alt="Generic placeholder image">
           </div>
           <div class="col-md-10">
-            <h5 class="mt-0">Media heading</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            <h5 class="mt-0"><?php echo substr($Sorgu["baslik"],0,50); if(strlen($Sorgu["baslik"])>50){echo" ...";} ?></h5>
+            <?=substr($Sorgu["aciklama"],0,100); if(strlen($Sorgu["aciklama"])>100){echo" ...";} ?>
           </div>
         </div>
+
+        <?php
+            }
+        ?>
+        
       </div>
 
 

@@ -2,14 +2,6 @@
 session_start();
 $UserID = $_SESSION["id"];
 if($UserID != ""){
-    require("../../PHP/gereksinimler.php");
-    $SORGU		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  users WHERE id = '$UserID' "); 
-    $SORGU->execute();
-    $SORGUSAYISI		=	$SORGU->rowCount();
-    $SORGULAR	=	$SORGU->fetch(PDO::FETCH_ASSOC);
-    if($SORGUSAYISI>0){
-        $name = $SORGULAR["name"];
-    }
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +13,7 @@ if($UserID != ""){
     <title>Güneş İnşaat</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 <body>
@@ -39,13 +31,13 @@ if($UserID != ""){
             <a class="nav-link active" aria-current="page" href="home.php">Admin Paneli</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="projeler.php">Projeler</a>
+            <a class="nav-link" href="index.php">Projeler</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="fotograflar.php">Fotoğraflar</a>
+            <a class="nav-link active" href="index.php">Fotoğraflar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ayarlar.php">Ayarlar</a>
+            <a class="nav-link" href="index.php">Ayarlar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cikis.php">Çıkış Yap</a>
@@ -57,20 +49,9 @@ if($UserID != ""){
       </div>
     </div>
   </nav>
-  
-  <div class="container my-5">
-    <div class="text-center my-auto giris bg-dark">
-        <a href="../"><img src="../../images/logo/logo.png" alt="logo" class="my-5"></a>
-    </div>
-    <br><br>
-    <div class="text-center bg-dark hosgeldiniz giris p-5">
-        <h1>Hoş Geldiniz</h1>
-        <h2><?= $name; ?></h2>
-    </div>
-</div>
 
   <?php
-    require("footer.php");
+require("footer.php");
   ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -79,7 +60,7 @@ if($UserID != ""){
 </body>
 </html>
 <?php
-  }else{
-      header("Location:../");
-  }
+}else{
+    header("Location:../");
+}
 ?>
