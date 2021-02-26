@@ -77,7 +77,7 @@ if(isset($_REQUEST["KID"])){
     </div>
   </nav>
   <br>
-    <h1 class="text-center my-5">Yeni Proje Kayıt</h1>
+    <h1 class="text-center my-5">Kayıtlı Proje Güncelle</h1>
     <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
     <div class="container text-center my-5">
       <form action="../../PHP/projeDuzenleKaydet.php?KID=<?=$KID ?>" enctype="multipart/form-data" method="POST">
@@ -214,7 +214,34 @@ if(isset($_REQUEST["KID"])){
       </form>
     </div>
     <br>
-
+    <div class="container">
+        <h1 class="text-center my-5">Kapak Fotoğrafı Güncelle</h1>
+        <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
+        <form action="../../PHP/projeDuzenleKaydet.php?KID=<?=$KID ?>" enctype="multipart/form-data" method="POST">
+            <div class="row m-5 AdminKapakFoto">            
+                <div class="col-11 col-md-6 p-5 text-center">
+                    <img src="../../images/proje/<?=$image?>" alt="">
+                </div>
+            
+                
+                <div class="col-11 col-md-6 p-5 text-center">
+                    <label for="kapakFoto" >Kapak Resmi Yükleyin</label>
+                    <div class="drop-zone m-auto">
+                        <span class="drop-zone__prompt">Dosyayı buraya sürükle ya da yüklemek için tıkla</span>
+                        <input type="file" id="kapakFoto" accept="image/*" name="myFile" class="drop-zone__input">
+                    </div>
+                </div>
+                
+                <div class="col-12 text-center p-5">
+                    <button type="submit" class="btn btn-primary w-25">Değişiklikleri Kaydet</button>
+                </div>
+                <div class="col-12 mb-5">
+                    Daha fazla fotoğraf eklemek için <a href="projeFotografEkle.php?KID=<?=$KID ?>">tıklayınız.</a>
+                </div>
+            
+            </div>
+        </form>
+    </div>
   <?php
 require("footer.php");
   ?>

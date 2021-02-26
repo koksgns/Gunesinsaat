@@ -96,7 +96,8 @@ function Edit(index) {
     window.location = "projeyiDuzenle.php?KID="+index;
 }
 
-
+//daha fazla foto ekleS
 function AddIMG(index) {
     alert("AddIMg"+index);
+    window.location = "projeFotografEkle.php?KID="+index;
 }

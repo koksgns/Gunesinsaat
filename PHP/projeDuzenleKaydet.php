@@ -154,12 +154,54 @@ echo "<br>";
 		}
 
 
+		echo "<br>";
+
+
+		if(isset($_FILES['myFile'])){
+			echo $Kimage;
+			$dosya = "../images/proje/".$Kimage;
+			if(file_exists($dosya)){
+				echo '<img src="'.$dosya.'" alt="logo" class="m-auto" >';
+				unlink($dosya);
+				
+				echo "Belirlenen dosya silindi.";
+				$yukleKlasor=   "../images/proje";
+				$tmp_name   =   $_FILES['myFile']['tmp_name'];
+				$name       =   $_FILES['myFile']['name'];
+				$boyut      =   $_FILES['myFile']['size'];
+				$tip        =   $_FILES['myFile']['type'];
+				$uzanti     =   substr($name, -5, 5);
+				
+				$randomad   =   fileNameGeneraTe(45); 
+				$resimAd  =   $randomad . $uzanti;
+				
+				move_uploaded_file($tmp_name, $yukleKlasor."/".$resimAd);
+				
+				$UyeGuncellemeSorgusu2		=	$VeritabaniBaglantisi->prepare("UPDATE projeler SET projeimg1 = '$resimAd' WHERE id = '$KID'");
+				$UyeGuncellemeSorgusu2->execute();
+				$Kontrol2		=	$UyeGuncellemeSorgusu2->rowCount();
+				if($Kontrol2>0){
+					echo "aciklama  başaraılı";
+					echo '<img src="../images/proje/'.$resimAd.'" alt="logo" class="m-auto" >';
+				}else{
+					echo "aciklama  ile ilgili güncelleme Yokkkk";
+					$basari = false;
+				}
+			}else{
+				$basari = false;
+				echo "Belirlenen dosya bu dizinde değildir.";
+			}   
+
+			
+		}else{
+			echo "KApak FOTO ile ilgili güncelleme Yok";
+		}
+
         if($basari){
-            header("Location: ../screen/admin/projeler.php");
+            header("Location: ../screen/admin/projeyiDuzenle.php?KID=$KID");
         }else{
             header("Location: ../screen/admin/projeler.php");
         }
-
 
     }
 
