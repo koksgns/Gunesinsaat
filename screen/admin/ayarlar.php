@@ -2,6 +2,39 @@
 session_start();
 $UserID = $_SESSION["id"];
 if($UserID != ""){
+  require("../../PHP/gereksinimler.php");
+  if(isset($_REQUEST["Pasword"]) && ($_REQUEST["Pasword"] == "1")){
+      if(isset($_REQUEST["Pass"])){
+          $SORGU		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  users WHERE id = '$UserID' "); 
+          $SORGU->execute();
+          $SORGUSAYISI		=	$SORGU->rowCount();
+          $SORGULAR	=	$SORGU->fetch(PDO::FETCH_ASSOC);
+          if($SORGUSAYISI>0){
+              $MevcutPass = $SORGULAR["password"];
+          }
+          $Pass   =  Filtrele($_REQUEST["Pass"]);
+          if(isset($_REQUEST["NewPass"])){
+              $message = "Beklenmedik bir hata oluştu daha sonra tekrar deneyiniz";
+              $NewPass   =  Filtrele($_REQUEST["NewPass"]);
+              if(isset($_REQUEST["NewPassRep"])){
+                  $NewPassRep   =  Filtrele($_REQUEST["NewPassRep"]);
+                  if(($Pass == $MevcutPass) && ($NewPass == $NewPassRep)){
+                      $UyeGuncellemeSorgusu2		=	$VeritabaniBaglantisi->prepare("UPDATE users SET password = '$NewPass' WHERE id = '$UserID'");
+                      $UyeGuncellemeSorgusu2->execute();
+                      $Kontrol2		=	$UyeGuncellemeSorgusu2->rowCount();
+                      if($Kontrol2>0){
+                        $message = "Parola değişikliği başarılı";
+                      }else{
+                          $message = "Hataoluştu";
+                      }
+                  }else{
+                      $message = "Hatalı bilgi girdiniz lütfen kontrol ederek tekrar deneyiniz";
+                  }
+              }              
+              echo "<script type='text/javascript'>alert('$message');</script>";
+          }
+      }      
+  }
 ?>
 
 <!DOCTYPE html>
@@ -31,13 +64,13 @@ if($UserID != ""){
             <a class="nav-link " aria-current="page" href="home.php">Admin Paneli</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Projeler</a>
+            <a class="nav-link" href="projeler.php">Projeler</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Fotoğraflar</a>
+            <a class="nav-link" href="fotograflar.php">Fotoğraflar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="index.php">Ayarlar</a>
+            <a class="nav-link active" href="ayarlar.php">Ayarlar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cikis.php">Çıkış Yap</a>
@@ -49,6 +82,30 @@ if($UserID != ""){
       </div>
     </div>
   </nav>
+  <div class="container my-5">
+    <div class="text-center my-auto giris bg-dark">
+        <a href="../"><img src="../../images/logo/logo.png" alt="logo" class="my-5"></a>
+    </div>
+    <br><br>
+    <div class="text-center  p-5">
+        <form action="ayarlar.php?Pasword=1" method="POST">
+            <h2>Parola Değiştir</h2>
+            <div class="form-group">
+              <input type="password" required name="Pass" placeholder="Mevcut Parolanızı Giriniz *" class="w-50 m-auto form-control">
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="password" required name="NewPass" placeholder="Yeni Parolanızı Giriniz *" class="w-50 m-auto form-control">
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="password" required name="NewPassRep" placeholder="Yeni Parolanızı Tekrar Giriniz *" class="w-50 m-auto form-control">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary w-25">Parolayı Değiştir</button>
+        </form>
+    </div>
+</div>
 
   <?php
 require("footer.php");

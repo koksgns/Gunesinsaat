@@ -2,6 +2,12 @@
 session_start();
 $UserID = $_SESSION["id"];
 if($UserID != ""){
+  require("../../PHP/gereksinimler.php");
+  $SORGU		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  fotograflar "); 
+  $SORGU->execute();
+  $SORGUSAYISI		=	$SORGU->rowCount();
+  $SORGULAR	=	$SORGU->fetchAll(PDO::FETCH_ASSOC);
+  $SORGULAR = array_reverse($SORGULAR);
 ?>
 
 <!DOCTYPE html>
@@ -31,13 +37,13 @@ if($UserID != ""){
             <a class="nav-link active" aria-current="page" href="home.php">Admin Paneli</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Projeler</a>
+            <a class="nav-link" href="projeler.php">Projeler</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="index.php">Fotoğraflar</a>
+            <a class="nav-link active" href="fotograflar.php">Fotoğraflar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Ayarlar</a>
+            <a class="nav-link" href="ayarlar.php">Ayarlar</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cikis.php">Çıkış Yap</a>
@@ -49,11 +55,54 @@ if($UserID != ""){
       </div>
     </div>
   </nav>
+  <div class="container">
+    <h1 class="text-center my-5">Fotoğraf Yükle</h1>
+     
+     <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
+     <p class="w-75 m-auto text-warning"><i class="fas fa-exclamation-triangle"></i> Fotoğrafı seçtikten sonra fotoğraf için kısa açıklama giriniz ardından yükle butonuna basınız.</p>
+       <div class="row m-5">
+         <form action="../../PHP/fotografKayit.php" enctype="multipart/form-data" method="POST">
+             <div class="drop-zone m-auto">
+                 <span class="drop-zone__prompt">Dosyayı buraya sürükle ya da yüklemek için tıkla</span>
+                 <input type="file" id="kapakFoto" accept="image/*" name="myFile" class="drop-zone__input" >
+             </div>
+             <br>
+             <div class="form-group w-50 m-auto">
+              <label for="fotoAciklama" >Bir Başlık Giriniz</label>
+              <input type="text" name="fotoAciklama" maxlength="100" class="form-control"  id="fotoAciklama" required>
+            </div>
+            <br>
+             <div class="form-group text-center my-3 col-12">
+                 <button type="submit" class="btn btn-primary w-25">Yükle</button>
+             </div> 
+         </form>
+       </div>
+   </div>
+   <br>
+  <div class="container my-5 text-center">
+      <h1>Kayıtlı Fotoğraflar</h1>
+      <hr class="w-75 mt-5 mb-4 m-auto ">
+      <div class="row photoPage justify-content-center">
+          <?php
+              foreach($SORGULAR as $Sorgu){
+          ?>
+
+            <div class="col-12 col-sm-6 col-md-4 p-2 border ">
+                <img src="../../images/photo/<?=$Sorgu["IMG"]; ?>" alt="<?=$Sorgu["fotoAciklama"]; ?>">
+                <p><?=$Sorgu["fotoAciklama"]; ?></p>
+            </div>
+          <?php
+              }
+          ?>   
+             
+      </div>
+  </div>
 
   <?php
 require("footer.php");
   ?>
-
+  
+    <script src="../../js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>

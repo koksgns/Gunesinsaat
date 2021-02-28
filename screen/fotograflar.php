@@ -6,13 +6,6 @@
   $SORGULAR	=	$SORGU->fetchAll(PDO::FETCH_ASSOC);
   $SORGULAR = array_reverse($SORGULAR);
   $sayac =1;
-
-  $SORGU1		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  projeler"); 
-  $SORGU1->execute();
-  $SORGUSAYISI1		=	$SORGU1->rowCount();
-  $SORGULAR1	=	$SORGU1->fetchAll(PDO::FETCH_ASSOC);
-  $SORGULAR1 = array_reverse($SORGULAR1);
-  $sayac1=1;
 ?>
 
 
@@ -39,7 +32,7 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.php">Anasayfa</a>
+                <a class="nav-link" aria-current="page" href="index.php">Anasayfa</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="proje/">Projeler</a>
@@ -63,89 +56,29 @@
           </div>
         </div>
       </nav>
-
-
-
-      <section class="AnsayfaSlider">
-        <div class="caption">
-            <h1>GÜNEŞ İNŞAAT</h1>
-            <p>Hayallerinizi süsleyen yapıların <b>Güneş İnşaat</b> ile canlandırmaya ne dersiniz?</p>
-        </div>
-    </section>
-      <br><br><br>
-      <div class="container-fluid bg-dark mb-5 text-center">
-        &nbsp;
-      </div>
-
-      <div class="container ">
-        <div >
-          <h1 class="text-center">Son Projeler</h1>
-          <p class="dahaFazla pt-2">Daha fazlası için <a href="proje">tıklayınız</a>.</p>
-        </div>
-
-        <?php
-            foreach($SORGULAR1 as $Sorgu){
-              if($sayac1 == 10){
-                break;
-              }
-        ?>
-
-
-        <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
-        <a href="proje/projedetay/index.php?PID=<?=$Sorgu["id"]?>" class="altcizgikaldir text-dark">
-          <div class="row w-75 mx-auto" >
-            <div class="col-md-2 AnsayafaSonYapilar">
-              <img class="rounded mx-auto d-block" src="../images/proje/<?=$Sorgu["projeimg1"] ?>" alt="Generic placeholder image">
-            </div>
-            <div class="col-md-10">
-              <h5 class="mt-0"><?php echo substr($Sorgu["baslik"],0,50); if(strlen($Sorgu["baslik"])>50){echo" ...";} ?></h5>
-              <?=substr($Sorgu["aciklama"],0,100); if(strlen($Sorgu["aciklama"])>100){echo" ...";} ?>
-            </div>
-          </div>
-        </a>
-        <?php
-            $sayac1++;
-            }
-        ?>
-        
-      </div>
-
-    <br><br>
-
-    <div class="container my-5">
-    <h1 class="text-center">Son Paylaşımlar</h1>
-        <p class="dahaFazla pt-2">Daha fazlası için <a href="fotograflar.php">tıklayınız</a>.</p>
-      <div class="row text-center justify-content-center">        
-        <?php
-            foreach($SORGULAR as $Sorgu){ 
-              if($sayac == 10){
-                break;
-              }
+      
+      <div class="container my-5 text-center">
+      <h1>Kayıtlı Fotoğraflar</h1>
+      <hr class="w-75 mt-5 mb-4 m-auto ">
+      <div class="row photoPage justify-content-center">
+          <?php
+              foreach($SORGULAR as $Sorgu){
           ?>
-        <div class="col-12 col-sm-6 col-md-4 projedetayfotolar my-3">
-          <img src="../images/photo/<?=$Sorgu["IMG"] ?>" class= "projeimgDetay" alt="<?=$Sorgu["fotoAciklama"]; ?>"> <br> <br>
-        </div><?php $sayac++; } ?>
-      </div> 
-    </div>
 
-    <div class="container-fluid my-5" style="background-color: rgb(236, 185, 118);">
-      <div class="row justify-content-around p-5">
-        <div class="col-3 text-center">
-          <h3>İstihdam</h3>
-          <p class="py-3">500</p>
-        </div>
-        <div class="col-3 text-center">
-          <h3>Gerçekleşen Projeler</h3>
-          <p class="py-3"><?=$SORGUSAYISI1?></p>
-        </div>
-        <div class="col-3 text-center">
-          <h3>Toplam İnşaat Alanı</h3>
-          <p class="py-3">5 000 m²</p>
-        </div>
+            <div class="col-12 col-sm-6 col-md-4 p-5 border ">
+                <img src="../images/photo/<?=$Sorgu["IMG"]; ?>" alt="<?=$Sorgu["fotoAciklama"]; ?>">
+                <p><?=$Sorgu["fotoAciklama"]; ?></p>
+            </div>
+          <?php
+              }
+          ?>   
+             
       </div>
+  </div>
 
-    </div>
-    <br>
+
+    
+
 
     <!--FOOTER-->
     <?php

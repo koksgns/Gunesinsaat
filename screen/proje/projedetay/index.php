@@ -1,3 +1,31 @@
+<?php
+  
+  if(isset($_REQUEST["PID"])){
+    require("../../../PHP/gereksinimler.php");
+    $PID   =  $_REQUEST["PID"];
+  $SORGU		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  projeler WHERE id= $PID"); 
+  $SORGU->execute();
+  $SORGUSAYISI		=	$SORGU->rowCount();
+  $SORGULAR	=	$SORGU->fetch(PDO::FETCH_ASSOC);
+  if($SORGUSAYISI>0){
+        
+    $image  =   $SORGULAR["projeimg1"];
+    $baslik  =   $SORGULAR["baslik"];
+    $baslamaTarih  =   $SORGULAR["baslamaTarih"];
+    $bitisTarih  =   $SORGULAR["bitisTarih"];
+    $il  =   $SORGULAR["il"];
+    $ilce  =   $SORGULAR["ilçe"];
+    $aciklama  =   $SORGULAR["aciklama"];
+    $projeFotolari  =   $SORGULAR["projeFotolari"];
+    
+}   
+if($projeFotolari != ""){
+$projeFotolar = explode(",",$projeFotolari);
+array_pop($projeFotolar);
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="TR-tr">
 <head>
@@ -28,6 +56,9 @@
                 <a class="nav-link active" href="../">Projeler</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="../../hizmetlerimiz.php">Hizmetlerimiz</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="../../hakkinda.php">Hakkımızda</a>
               </li>
               <li class="nav-item">
@@ -45,56 +76,107 @@
     </nav>
     <br><br>
     <div class="container projedetaybaslik text-center p-1">
-      <h1>Lorem ipsum dolor sit amet.</h1>
+      <h1><?= $baslik ?></h1>
     </div>
-    <br> <br>
-    <div class="container">
-      <div class="row projedetayfotolar">
-        <div class="col-6 ">
-          <marquee direction="right" >
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">            
-          </marquee>
-        </div>
-        <div class="col-6">
-          <marquee direction="left" >
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-            <img src="../../../images/news/500x500.png">
-          </marquee>
-        </div>
-      </div>
-    </div>
-    <br>
+    <br> 
 
     <div class="container mb-5">
       <h3 class="my-5">Proje Detayları</h3>
       <div class="row justify-content-center">
         <div class="col-10 col-md-4">
           <h5>Yer</h5>
-          <p>İstanbul / Beşiktaş</p>
+          <p><?=$il ?> / <?=$ilce ?></p>
           <br>
           <h5>Başlama Tarihi</h5>
-          <p>00 / 00 / 0000 </p>
+          <p><?=$baslamaTarih ?> </p>
           <br>
           <h5>Bitirme Tarihi</h5>
-          <p>00 / 00 / 0000 </p>
+          <p><?=$bitisTarih ?></p>
         </div>
         <div class="col-10 col-md-7">
           <h5>Proje Açıklaması</h5>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil et culpa quos sapiente! Eos praesentium laborum, quo fugiat autem at facere, quas numquam placeat, illo repellendus earum animi! Aliquid minima maiores eveniet explicabo alias dicta, quam vitae ad voluptate rerum fugit beatae et magnam. Exercitationem enim hic, animi cum autem nobis est aperiam quia perferendis dolores et velit aliquid! Aliquam.</p>
+          <p><?=$aciklama ?><p>
         </div>
       </div>
     </div>
+    <br>
+    <br>
+    
+     
+    
+    <div class="container mb-5">
+      <h3>Kayıtlı Fotoğraflar</h3>
+      <div class="row text-center ">
+        <div class="col-12 col-sm-6 col-md-4 projedetayfotolar my-3">
+          <img src="../../../images/proje/<?=$image?>" class= "projeimgDetay" alt="">
+        </div>
+        <?php
+          if($projeFotolari!= null){
+            foreach($projeFotolar as $Foto){
+          ?>
+        <div class="col-12 col-sm-6 col-md-4 projedetayfotolar my-3">
+          <img src="../../../images/proje/<?=$Foto?>" class= "projeimgDetay" alt="ProjeFotografi"> <br> <br>
+        </div>
+        <?php 
+          }
+        }
+      ?>
+      </div> 
+    </div>
+
+    <!--FOOTER-->
+ <?php
+  $SORGUFooter		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  projeler"); 
+  $SORGUFooter->execute();
+  $SORGUSAYISIFooter		=	$SORGUFooter->rowCount();
+  $SORGULARFooter	=	$SORGUFooter->fetchAll(PDO::FETCH_ASSOC);
+  $SORGULARFooter = array_reverse($SORGULARFooter);
+  $sayacFooter =1;
+?>
+<footer class="bg-dark pt-5 ">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-md-4">
+               <a href="#" class="navbar-brand footer-brand"><img src="../../../images/logo/logo.png"></a>
+            </div>
+            <div class="col-md-3 mt-3">
+                <ul class="list-unstyled">
+                    <li class="mb-3 text-muted"><small>Şirket</small></li>
+                    <li><a href="../../index.php" class="text-white footer-text altcizgikaldir"> Anasayfa</li></a>
+                    <li><a href="../" class="text-white footer-text altcizgikaldir"> Projeler</li></a>
+                    <li><a href="../../hizmetlerimiz.php" class="text-white footer-text altcizgikaldir"> Hizmetlerimiz</li></a>
+                    <li><a href="../../hakkinda.php" class="text-white footer-text altcizgikaldir"> Hakkımızda</li></a>
+                    <li><a href="../../iletisim.php" class="text-white footer-text altcizgikaldir"> İletişim</li></a>
+                </ul>
+            </div>
+            <div class="col-md-3 mt-3">
+                <ul class="list-unstyled">
+                    <li class="mb-3 text-muted"><small>Projeler</small></li>
+                    <?php
+                        foreach($SORGULARFooter as $Sorgu){
+                            if($sayacFooter == 6){
+                                break;
+                            }
+                    ?>
+                        <li><a href="index.php?PID=<?=$Sorgu["id"]?>" class="text-white footer-text altcizgikaldir"> <?php echo substr($Sorgu["baslik"],0,20); if(strlen($Sorgu["baslik"])>20){echo"...";} ?></li></a>
+                    <?php
+                            $sayacFooter++;
+                        }
+                    ?>
+                </ul>
+            </div>
+            <div class="col-md-2 mt-3 text-end social-logo">
+                <a href="https://www.facebook.com/GÜNEŞ-Insaat-650970248400529/" class="text-white footer-text"><i class="fab fa-facebook-f fa-2x me-3"></i></a>
+                <a href="#" class="text-white footer-text"> <i class="fab fa-twitter fa-2x me-3"></i></a>
+                <a href="https://www.instagram.com/muratgunes522/" class="text-white footer-text"> <i class="fab fa-instagram fa-2x me-3"></i></a>
+            </div>
+            <div class="clearfix text-muted text-center">
+                <p style="font-size: 14px; margin-top: 10px;" class="mb-3 ">Güneş İnşaat © Tüm Hakları Saklıdır. - Design: by <a href="https://www.instagram.com/koksgns/" class="altcizgikaldir text-success">KOKSGNS</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
 
 
 
@@ -103,3 +185,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php
+  }else{
+    echo "mereha";
+    header("Location:../");
+  }
+?>

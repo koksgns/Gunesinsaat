@@ -52,7 +52,8 @@ if($BASLIK != "" && $BASLAMATARIHI != "" && $BITISTARIH != "" && $IL != "" && $I
     $resimAd  =   $randomad . $uzanti;
     
     move_uploaded_file($tmp_name, $yukleKlasor."/".$resimAd);
-    $EKLEMESORGUSU		=	$VeritabaniBaglantisi->exec("INSERT INTO projeler (baslik , baslamaTarih, bitisTarih, il, ilçe, aciklama, projeimg1) values ('$BASLIK', '$BASLAMATARIHI', '$BITISTARIH', '$IL', '$ILCE', '$ACIKLAMA', '$resimAd' )");
+    $durum = 0;
+    $EKLEMESORGUSU		=	$VeritabaniBaglantisi->exec("INSERT INTO projeler (baslik , baslamaTarih, bitisTarih, il, ilçe, durum, aciklama, projeimg1) values ('$BASLIK', '$BASLAMATARIHI', '$BITISTARIH', '$IL', '$ILCE', '$durum', '$ACIKLAMA', '$resimAd' )");
     if($EKLEMESORGUSU){
         header("Location: ../screen/admin/projeler.php");
     }

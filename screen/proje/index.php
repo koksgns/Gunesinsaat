@@ -1,3 +1,21 @@
+<?php
+  require("../../PHP/gereksinimler.php");
+  $SORGU		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  projeler WHERE durum = 0"); 
+  $SORGU->execute();
+  $SORGUSAYISI		=	$SORGU->rowCount();
+  $SORGULAR	=	$SORGU->fetchAll(PDO::FETCH_ASSOC);
+  $SORGULAR = array_reverse($SORGULAR);
+  $sayac =1;
+
+  $SORGU1		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  projeler WHERE durum = 1"); 
+  $SORGU1->execute();
+  $SORGUSAYISI1		=	$SORGU1->rowCount();
+  $SORGULAR1	=	$SORGU1->fetchAll(PDO::FETCH_ASSOC);
+  $SORGULAR1 = array_reverse($SORGULAR1);
+  $sayac1=1;
+
+
+?>
 <!DOCTYPE html>
 <html lang="TR-tr">
 <head>
@@ -26,6 +44,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link active" href="index.php">Projeler</a>
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link" href="../hizmetlerimiz.php">Hizmetlerimiz</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../hakkinda.php">Hakkımızda</a>
@@ -56,62 +77,27 @@
      
       <div class="row m-5 justify-content-between">
         <h1 class="text-center">Devam Eden Projeler</h1>
+
+        <?php
+          foreach($SORGULAR as $Sorgu){
+        ?>
        
         <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
+          <a class="altcizgikaldir" href="projedetay/index.php?PID=<?=$Sorgu["id"]?>">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
+              <img class= "projeimg" src="../../images/proje/<?=$Sorgu["projeimg1"]?>" class="projeimages" alt="">
             </div>
             <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
+              <h2><?php echo substr($Sorgu["baslik"],0,15); if(strlen($Sorgu["baslik"])>15){echo"...";} ?></h2>
+              <p><?php echo substr($Sorgu["aciklama"],0,80); if(strlen($Sorgu["aciklama"])>80){echo"...";} ?></p>
             </div>
           </div>
         </a>
         </div>
-
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
-
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
-
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
+        <?php
+          }
+        ?>
 
 
       </div>
@@ -124,91 +110,27 @@
       <div class="row m-5 justify-content-between">
         <h1 class="text-center">Tamamlanmış Projeler</h1>
         
-
+        
+        <?php
+          foreach($SORGULAR1 as $Sorgu){
+        ?>
+       
         <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
+          <a class="altcizgikaldir" href="projedetay/index.php?PID=<?=$Sorgu["id"]?>">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
+              <img class= "projeimg" src="../../images/proje/<?=$Sorgu["projeimg1"]?>" class="projeimages" alt="">
             </div>
             <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
+              <h2><?php echo substr($Sorgu["baslik"],0,15); if(strlen($Sorgu["baslik"])>15){echo"...";} ?></h2>
+              <p><?php echo substr($Sorgu["aciklama"],0,80); if(strlen($Sorgu["aciklama"])>80){echo"...";} ?></p>
             </div>
           </div>
         </a>
         </div>
-
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
-
-
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
-
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
-
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
-
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
-          <a class="altcizgikaldir" href="projedetay/">
-          <div class="row p-2">
-            <div class="col-12 text-center text-lg-left  col-xl-6">
-              <img class= "projeimg" src="../../images/news/500x500.png" class="projeimages" alt="">
-            </div>
-            <div class="col-12 col-xl-6 text-center p-3 text-dark">
-              <h2>İŞ</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, cum.</p>
-            </div>
-          </div>
-        </a>
-        </div>
+        <?php
+          }
+        ?>
 
         
 
@@ -216,11 +138,11 @@
     </div>
 
 
-    <div class="container-fluet my-5" style="background-color: rgb(236, 185, 118);">
+    <div class="container-fluid my-5" style="background-color: rgb(236, 185, 118);">
       <div class="row justify-content-around p-5">
         <div class="col-5 text-center">
           <h3>Gerçekleşen Projeler</h3>
-          <p class="py-3">500</p>
+          <p class="py-3"><?=$SORGUSAYISI+$SORGUSAYISI1?></p>
         </div>
         <div class="col-5 text-center">
           <h3>Toplam İnşaat Alanı</h3>
@@ -231,6 +153,57 @@
     </div>
 
  <!--FOOTER-->
+ <?php
+  $SORGUFooter		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  projeler"); 
+  $SORGUFooter->execute();
+  $SORGUSAYISIFooter		=	$SORGUFooter->rowCount();
+  $SORGULARFooter	=	$SORGUFooter->fetchAll(PDO::FETCH_ASSOC);
+  $SORGULARFooter = array_reverse($SORGULARFooter);
+  $sayacFooter =1;
+?>
+<footer class="bg-dark pt-5 ">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-md-4">
+               <a href="#" class="navbar-brand footer-brand"><img src="../../images/logo/logo.png"></a>
+            </div>
+            <div class="col-md-3 mt-3">
+                <ul class="list-unstyled">
+                    <li class="mb-3 text-muted"><small>Şirket</small></li>
+                    <li><a href="../index.php" class="text-white footer-text altcizgikaldir"> Anasayfa</li></a>
+                    <li><a href="../proje/" class="text-white footer-text altcizgikaldir"> Projeler</li></a>
+                    <li><a href="../hizmetlerimiz.php" class="text-white footer-text altcizgikaldir"> Hizmetlerimiz</li></a>
+                    <li><a href="../hakkinda.php" class="text-white footer-text altcizgikaldir"> Hakkımızda</li></a>
+                    <li><a href="../iletisim.php" class="text-white footer-text altcizgikaldir"> İletişim</li></a>
+                </ul>
+            </div>
+            <div class="col-md-3 mt-3">
+                <ul class="list-unstyled">
+                    <li class="mb-3 text-muted"><small>Projeler</small></li>
+                    <?php
+                        foreach($SORGULARFooter as $Sorgu){
+                            if($sayacFooter == 6){
+                                break;
+                            }
+                    ?>
+                        <li><a href="projedetay/index.php?PID=<?=$Sorgu["id"]?>" class="text-white footer-text altcizgikaldir"> <?php echo substr($Sorgu["baslik"],0,20); if(strlen($Sorgu["baslik"])>20){echo"...";} ?></li></a>
+                    <?php
+                            $sayacFooter++;
+                        }
+                    ?>
+                </ul>
+            </div>
+            <div class="col-md-2 mt-3 text-end social-logo">
+                <a href="https://www.facebook.com/GÜNEŞ-Insaat-650970248400529/" class="text-white footer-text"><i class="fab fa-facebook-f fa-2x me-3"></i></a>
+                <a href="#" class="text-white footer-text"> <i class="fab fa-twitter fa-2x me-3"></i></a>
+                <a href="https://www.instagram.com/muratgunes522/" class="text-white footer-text"> <i class="fab fa-instagram fa-2x me-3"></i></a>
+            </div>
+            <div class="clearfix text-muted text-center">
+                <p style="font-size: 14px; margin-top: 10px;" class="mb-3 ">Güneş İnşaat © Tüm Hakları Saklıdır. - Design: by <a href="https://www.instagram.com/koksgns/" class="altcizgikaldir text-success">KOKSGNS</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>

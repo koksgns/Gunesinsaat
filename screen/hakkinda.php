@@ -65,17 +65,32 @@
           <div class="row">
             <div class="col-md-6">
               <h1 class="text-center mb-5">Vizyon</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est nulla quibusdam id esse dolore commodi temporibus ex saepe ullam architecto. Nobis, id excepturi. Quam, aut!</p>
+              <p>Çağdaşlaşan günümüzde teknolojinin bize sunduğu her imkandan en verimli şekilde yararlanıp ismimizi güven denildiğinde gösterilecek firmalar arasına koymak.<p>
             </div>
             <div class="col-md-6">
               <h1 class="text-center mb-5">Misyon</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos officiis, aspernatur aperiam explicabo impedit quam tenetur deleniti sint quos esse!</p>
+              <p>İnsani değerlimizin başında gelen BARINMA ihtiyacı doğrultusunda, çağdaş standartlarda uygun, güvenilir yapılar inşa ederek insanlara mutluluk aşılamak.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container-fluid bg-dark my-5">$nbsp</div>
+    <div class="container m-5 text-center">
+      <h1>Yönetim</h1>
+      <div class="row yonetim p-5">
+        <div class="col-12 col-md-6">
+          <img src="../images/yonetim/DoTm7xqfWauH4lEr2tgJyPS3AnYUR9dcGCwz6MNvbKXkj8.jpg" alt="">
+          <h3 class="my-2">Köksal Güneş</h3>
+          <p>Kurucu üyesi</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <img src="../images/yonetim/DoTm7xqfWauH4lEr2tgJyPS3AnYUR9dcGCwz6MNvbKXkj8.jpg" alt="">
+          <h3 class="my-2">Köksal Güneş</h3>
+          <p>Kurucu üyesi</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid bg-dark my-5">&nbsp;</div>
     
 
 
