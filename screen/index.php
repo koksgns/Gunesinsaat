@@ -80,7 +80,14 @@
       <div class="container ">
         <div >
           <h1 class="text-center">Son Projeler</h1>
-          <p class="dahaFazla pt-2">Daha fazlası için <a href="proje">tıklayınız</a>.</p>
+          <?php
+              if($SORGUSAYISI1 > 10){ 
+          ?>
+               <p class="dahaFazla pt-2">Daha fazlası için <a href="proje">tıklayınız</a>.</p>
+          <?php
+              }
+          ?>
+          
         </div>
 
         <?php
@@ -114,7 +121,15 @@
 
     <div class="container my-5">
     <h1 class="text-center">Son Paylaşımlar</h1>
-        <p class="dahaFazla pt-2">Daha fazlası için <a href="fotograflar.php">tıklayınız</a>.</p>
+    <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
+    <?php
+        if($SORGUSAYISI > 10){ 
+    ?>
+          <p class="dahaFazla pt-2">Daha fazlası için <a href="fotograflar.php">tıklayınız</a>.</p>
+    <?php
+        }
+    ?>
+        
       <div class="row text-center justify-content-center">        
         <?php
             foreach($SORGULAR as $Sorgu){ 
@@ -146,6 +161,9 @@
 
     </div>
     <br>
+    <div class="container-fluid bg-dark mb-5 text-center">
+        &nbsp;
+    </div>
 
     <!--FOOTER-->
     <?php

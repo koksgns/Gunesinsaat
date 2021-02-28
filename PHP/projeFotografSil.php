@@ -45,6 +45,7 @@ if($UserID != ""){
             $Kontrol2		=	$UyeGuncellemeSorgusu2->rowCount();
             if($Kontrol2>0){
                 echo "sildi";
+                header("Location: ../screen/admin/projeFotografEkle.php?KID=$KID");
             }else{
                 echo "aciklama  ile ilgili güncelleme Yokkkk";
                 $basari = false;

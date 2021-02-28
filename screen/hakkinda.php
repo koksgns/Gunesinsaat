@@ -28,6 +28,9 @@
                 <a class="nav-link" href="proje/">Projeler</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="hizmetlerimiz.php">Hizmetlerimiz</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link active" href="hakkinda.php">Hakkımızda</a>
               </li>
               <li class="nav-item">
@@ -52,6 +55,10 @@
         </div>
     </section>
 
+    <div class="container-fluid bg-dark my-5 text-center">
+        &nbsp;
+    </div>
+
 
     <div class="container">
       <div class="row">
@@ -61,6 +68,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam sint explicabo a in non ex maxime, error saepe dolorem voluptatibus, dolores corporis fugiat optio eligendi perspiciatis necessitatibus voluptates maiores incidunt temporibus aperiam quisquam obcaecati eveniet. Voluptate sint nisi dignissimos odio repellat illum. Doloremque iusto, aperiam in ratione numquam tempore? Eaque labore explicabo necessitatibus ipsa voluptas, ullam cupiditate nostrum rerum minima? Repellendus dolorem nam eaque totam, veritatis porro fugit aliquid ducimus voluptatem necessitatibus, adipisci corporis quod temporibus. Facilis, delectus minima ad porro illum, id dignissimos omnis unde fuga deserunt nulla dolore nihil. Eligendi quas odio eius natus quidem labore, sit cupiditate.</p>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus veniam quidem ex doloremque ratione minima, fugiat repudiandae? Minus eaque officia ut? Repellendus, repellat saepe. Blanditiis, corrupti aliquam? Ex ad aliquam quod molestias magnam nisi velit, asperiores labore voluptas consectetur at fuga, ipsum odio quaerat cum. Excepturi fuga atque sint quibusdam dolor eos a dolores facilis eveniet temporibus! Enim quis officia dolorum similique nulla sint praesentium eos dolores fugit non asperiores, deleniti id sequi recusandae impedit qui perferendis voluptatibus saepe, aliquid doloribus nobis ipsam natus maxime quo? Corrupti ex dicta dolorem et. Error libero voluptate fugit repellendus doloremque nesciunt. Unde, assumenda!</p>
         </div>
+        <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
         <div class="col12 my-5">
           <div class="row">
             <div class="col-md-6">
@@ -75,6 +83,7 @@
         </div>
       </div>
     </div>
+    <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
     <div class="container m-5 text-center">
       <h1>Yönetim</h1>
       <div class="row yonetim p-5">
@@ -82,11 +91,13 @@
           <img src="../images/yonetim/DoTm7xqfWauH4lEr2tgJyPS3AnYUR9dcGCwz6MNvbKXkj8.jpg" alt="">
           <h3 class="my-2">Köksal Güneş</h3>
           <p>Kurucu üyesi</p>
+          <p><i class="fas fa-envelope"></i> <a class="altcizgikaldir" href="mailto:webmaster@example.com">koksalgunes@xxxx.com</a></p>
         </div>
         <div class="col-12 col-md-6">
           <img src="../images/yonetim/DoTm7xqfWauH4lEr2tgJyPS3AnYUR9dcGCwz6MNvbKXkj8.jpg" alt="">
           <h3 class="my-2">Köksal Güneş</h3>
           <p>Kurucu üyesi</p>
+          <p><i class="fas fa-envelope"></i> <a class="altcizgikaldir" href="mailto:webmaster@example.com">koksalgunes@xxxx.com</a></p>
         </div>
       </div>
     </div>

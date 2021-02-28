@@ -23,7 +23,7 @@ if($UserID != ""){
             move_uploaded_file($tmp_name, $yukleKlasor."/".$resimAd);
             $EKLEMESORGUSU		=	$VeritabaniBaglantisi->exec("INSERT INTO fotograflar (fotoAciklama , IMG) values ('$fotoAciklama', '$resimAd')");
             if($EKLEMESORGUSU){
-               echo "başarılı";
+                header("Location: ../screen/admin/fotograflar.php");
             }
         }else{
             echo "KApak FOTO ile ilgili güncelleme Yok";

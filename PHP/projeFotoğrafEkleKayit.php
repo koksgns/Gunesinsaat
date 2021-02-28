@@ -46,7 +46,7 @@ if($UserID != ""){
 				$UyeGuncellemeSorgusu2->execute();
 				$Kontrol2		=	$UyeGuncellemeSorgusu2->rowCount();
 				if($Kontrol2>0){
-					echo '<img src="../images/proje/'.$resimAd.'" alt="logo" class="m-auto" >';
+					header("Location: ../screen/admin/projeFotografEkle.php?KID=$KID");
 				}else{
 					echo "aciklama  ile ilgili güncelleme Yokkkk";
 					$basari = false;

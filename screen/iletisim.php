@@ -28,6 +28,9 @@
                 <a class="nav-link" href="proje/">Projeler</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="hizmetlerimiz.php">Hizmetlerimiz</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="hakkinda.php">Hakkımızda</a>
               </li>
               <li class="nav-item">
@@ -51,6 +54,9 @@
             <p>Hayallerinizi süsleyen yapıların <b>Güneş İnşaat</b> ile canlandırmaya ne dersiniz?</p>
         </div>
     </section>
+    <div class="container-fluid bg-dark my-5 text-center">
+        &nbsp;
+    </div>
 
     <div class="container my-5">
       <h1 class="text-center">Bize Ulaşın</h1>
@@ -62,20 +68,26 @@
           <img src="../images/logo/logo.png" alt="logo" class="my-5">
           <table class="table table-borderless" >
             <tr>
-              <td class="col-4" style="text-align: right;">Telefon</td>
+              <td class="col-4" style="text-align: right;">Telefon <i class="fas fa-phone"></i></td>
               <td>:</td>
               <td style="text-align: left;"><a class="altcizgikaldir" href="tel://+90312876xxxx">+90 312 876xxxx</a></td>
             </tr>
             <tr>
-              <td class="col-4" style="text-align: right;">E-posta</td>
+              <td class="col-4" style="text-align: right;">E-posta <i class="fas fa-envelope"></i></td>
               <td>:</td>
               <td style="text-align: left;"><a class="altcizgikaldir" href="mailto:webmaster@example.com">xxxxxx@xxxx.com</a></td>
             </tr>
             <tr>
-              <td class="col-4" style="text-align: right;">Adres</td>
+              <td class="col-4" style="text-align: right;">Whatsapp <i class="fab fa-whatsapp-square"></i></td>
+              <td>:</td>
+              <td style="text-align: left;"><a class="altcizgikaldir" target="_blank" href="https://wa.me/905419346709?text=Merhaba%20Güneş%20İnşaat">+90 312 876xxxx</a></td>
+            </tr>
+            <tr>
+              <td class="col-4" style="text-align: right;">Adres <i class="fas fa-map-marked-alt"></i></td>
               <td>:</td>
               <td style="text-align: left;"><a class="altcizgikaldir" href="xxxxxxxx">xxxxxxxxxxxxxxxxxxxxxxxxxxxxx</a></td>
             </tr>
+            
           </table>
         </div>
       </div>

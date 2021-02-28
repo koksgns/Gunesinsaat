@@ -55,35 +55,50 @@
         </div>
       </section>
 
+      <div class="container-fluid bg-dark my-5 text-center">
+        &nbsp;
+    </div>
+
       <div class="container my-5">
-      <div class="row text-center justify-content-center">   
+      <div class="row text-center justify-content-center"> 
         <div class="col-12 col-md-4 projedetayfotolar p-3">
-          <h2>Köksal</h2>
-          <img src="../images/photo/7hkmdUjs5vJqVXLtapTyGObNgPIHCKrZ6WwFAlu14cYoSs.jpg" class= "projeimgDetay" alt=""> <br> <br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid accusamus. Vel aliquid iusto voluptate?</p>
+          <h2>Kalıp</h2>
+          <img src="../images/hizmetler/kalip.jpg" class= "projeimgDetay" alt=""> <br> <br><br>
+        </div>  
+        <div class="col-12 col-md-4 projedetayfotolar p-3">
+          <h2>Duvar</h2>
+          <img src="../images/hizmetler/duvar.jpg" class= "projeimgDetay" alt=""> <br> <br><br>
         </div>
         <div class="col-12 col-md-4 projedetayfotolar p-3">
-          <h2>Köksal</h2>
-          <img src="../images/photo/7hkmdUjs5vJqVXLtapTyGObNgPIHCKrZ6WwFAlu14cYoSs.jpg" class= "projeimgDetay" alt=""> <br> <br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid accusamus. Vel aliquid iusto voluptate?</p>
+          <h2>Demir</h2>
+          <img src="../images/hizmetler/demir.jpg" class= "projeimgDetay" alt=""> <br> <br><br>
         </div>
         <div class="col-12 col-md-4 projedetayfotolar p-3">
-          <h2>Köksal</h2>
-          <img src="../images/photo/7hkmdUjs5vJqVXLtapTyGObNgPIHCKrZ6WwFAlu14cYoSs.jpg" class= "projeimgDetay" alt=""> <br> <br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid accusamus. Vel aliquid iusto voluptate?</p>
+          <h2>Çatı</h2>
+          <img src="../images/hizmetler/cati.jpg" class= "projeimgDetay" alt=""> <br> <br><br>
         </div>
         <div class="col-12 col-md-4 projedetayfotolar p-3">
-          <h2>Köksal</h2>
-          <img src="../images/photo/7hkmdUjs5vJqVXLtapTyGObNgPIHCKrZ6WwFAlu14cYoSs.jpg" class= "projeimgDetay" alt=""> <br> <br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid accusamus. Vel aliquid iusto voluptate?</p>
+          <h2>Alçı Tavan</h2>
+          <img src="../images/hizmetler/alciTavan.jpg" class= "projeimgDetay" alt=""> <br> <br><br>
         </div>
         <div class="col-12 col-md-4 projedetayfotolar p-3">
-          <h2>Köksal</h2>
-          <img src="../images/photo/7hkmdUjs5vJqVXLtapTyGObNgPIHCKrZ6WwFAlu14cYoSs.jpg" class= "projeimgDetay" alt=""> <br> <br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, aliquid accusamus. Vel aliquid iusto voluptate?</p>
+          <h2>Boya</h2>
+          <img src="../images/hizmetler/boya.jpg" class= "projeimgDetay" alt=""> <br> <br><br>
+        </div>
+        <div class="col-12 col-md-4 projedetayfotolar p-3">
+          <h2>İskele</h2>
+          <img src="../images/hizmetler/iskele.jpg" class= "projeimgDetay" alt=""> <br> <br><br>
+        </div>
+        <div class="col-12 col-md-4 projedetayfotolar p-3">
+          <h2>Dış Cepe Yalıtım</h2>
+          <img src="../images/hizmetler/yalitim.jpg" class= "projeimgDetay" alt=""> <br> <br><br>
         </div>
         
       </div> 
+    </div>
+
+    <div class="container-fluid bg-dark mb-5 text-center">
+        &nbsp;
     </div>
 
 

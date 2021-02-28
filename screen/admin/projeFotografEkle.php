@@ -26,9 +26,10 @@ if(isset($_REQUEST["KID"])){
         
     }   
     if($projeFotolari != ""){
-    $projeFotolar = explode(",",$projeFotolari);
+    $projeFotolar = explode(",",$projeFotolari);    
     array_pop($projeFotolar);
-    echo $fotoSayi = count($projeFotolar);
+    $projeFotolar = array_reverse($projeFotolar);
+    $fotoSayi = count($projeFotolar);
     }
 }
 

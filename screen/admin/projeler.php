@@ -26,12 +26,38 @@ if(isset($_REQUEST["KID"])){
             //echo "Belirlenen dosya bu dizinde değildir.";
         }    
     
-        $KELIMESIL   =   $VeritabaniBaglantisi->query("DELETE FROM projeler WHERE projeimg1 = '$KID'");
-        if($KELIMESIL){
+        $KayitSil   =   $VeritabaniBaglantisi->query("DELETE FROM projeler WHERE projeimg1 = '$KID'");
+        if($KayitSil){
             $message = "Kayıt Silindi";
             echo "<script type='text/javascript'>alert('$message');</script>";
         }
     }   
+}
+
+if(isset($_REQUEST["tamamlandi"])){
+  $tamamlandi   =  $_REQUEST["tamamlandi"];
+  $UyeGuncellemeSorgusu2		=	$VeritabaniBaglantisi->prepare("UPDATE projeler SET durum = 0 WHERE id = '$tamamlandi'");
+  $UyeGuncellemeSorgusu2->execute();
+  $Kontrol2		=	$UyeGuncellemeSorgusu2->rowCount();
+  if($Kontrol2>0){
+    $message = "Projenin durumu devam ediyor olarak güncellendi";
+  }else{
+    $message = "Beklenmedik bir hata oluştu lütfen daha sonra tekrar deneyiniz";
+  }  
+  echo "<script type='text/javascript'>alert('$message');</script>";
+}
+
+if(isset($_REQUEST["DevamEdiyor"])){
+  $devamEdiyor   =  $_REQUEST["DevamEdiyor"];
+  $UyeGuncellemeSorgusu2		=	$VeritabaniBaglantisi->prepare("UPDATE projeler SET durum = 1 WHERE id = '$devamEdiyor'");
+  $UyeGuncellemeSorgusu2->execute();
+  $Kontrol2		=	$UyeGuncellemeSorgusu2->rowCount();
+  if($Kontrol2>0){
+    $message = "Projenin durumu tamamlandı olarak güncellendi";
+  }else{
+    $message = "Beklenmedik bir hata oluştu lütfen daha sonra tekrar deneyiniz";
+  }  
+  echo "<script type='text/javascript'>alert('$message');</script>";
 }
 
 
@@ -238,6 +264,13 @@ if(isset($_REQUEST["KID"])){
     <br>
     <h1 class="text-center my-5">Kayıtlı Projeler</h1>
     <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
+    <p class="w-75 m-auto text-warning"><i class="fas fa-exclamation-triangle fa-2x"></i> Buton Klavuzu.</p> <br>
+    <p  class="w-75 m-auto "><i class="far fa-images fa-2x text-primary" ></i> Proje sayfasına projeyle ilgili daha fazla görsel eklemek için kullanılır.</p> <br>
+    <p  class="w-75 m-auto "><i class="far fa-edit fa-2x text-info" ></i> Proje hakkında girilen bilgileri için kullanılır.</p> <br>
+    <p  class="w-75 m-auto "><i class="fas fa-check  fa-2x text-success"></i> Projenin tamamlandığını belirtir tekrar tıklanıldığında tamamlanma durumundan devam ediliyor durmuna geçer.</p> <br>
+    <p  class="w-75 m-auto "><i class="fas fa-times fa-2x text-secondary" ></i> Projenin devam ettiğini belirtir tekrar tıklanıldığında devam ediliyor durumundan tamamlanma durmuna geçer.</p> <br>
+    <p  class="w-75 m-auto "><i class="far fa-trash-alt fa-2x text-danger" ></i> Projeyi silmek için kullanılır.</p> <br>
+    
     <div class="container mb-5">
       <div class="justify-content-center">
           <div class="table-responsive">          
@@ -245,9 +278,7 @@ if(isset($_REQUEST["KID"])){
                   <thead>
                       <tr>
                           <th>#</th>
-                          <th>Görsel Ekle</th>
-                          <th>Düzenle</th>
-                          <th>Sil </th>
+                          <th colspan="4">İşlemler</th>
                           <th>Foto</th>
                           <th>Başlık</th>
                           <th>Başlama Tarihi</th>
@@ -264,14 +295,16 @@ if(isset($_REQUEST["KID"])){
                       }
                       
                       
-                      foreach($SORGULAR1 as $Sorgu1){ ?>
-                      
+                      foreach($SORGULAR1 as $Sorgu1){ 
+                        $durum = $Sorgu1['durum'];
+                        ?>
+                          
                       <tr>
-                        
                         <td><?= $sayac?></td>
-                        <td><i class="far fa-images" onclick="AddIMG(<?=$Sorgu1['id']?>)"></i></td>
-                        <td><i class='far fa-edit' onclick="Edit(<?=$Sorgu1['id']?>)"></i></td>
-                        <td><i class='far fa-trash-alt' onclick="Delete('<?=$Sorgu1['projeimg1']?>')"></i></td>
+                        <td><i class="far fa-images fa-2x text-primary" onclick="AddIMG(<?=$Sorgu1['id']?>)"></i></td>
+                        <td><i class='far fa-edit fa-2x text-info' onclick="Edit(<?=$Sorgu1['id']?>)"></i></td>
+                        <td><?php if($durum == 0){ ?><i class="fas fa-times fa-2x text-secondary" onclick="devamEdiyor(<?=$Sorgu1['id']?>)" ></i> <?php }else{ ?><i class="fas fa-check fa-2x text-success" onclick="tamamlandı(<?=$Sorgu1['id']?>)"></i><?php } ?></td>
+                        <td><i class='far fa-trash-alt fa-2x text-danger' onclick="Delete('<?=$Sorgu1['projeimg1']?>')"></i></td>
                         <td onclick="OpenProject(<?=$Sorgu1['id']?>)"><img src="<?="../../images/proje/".$Sorgu1["projeimg1"]?>" alt="logo" class="m-auto" ></td>                        
                         <td onclick="OpenProject(<?=$Sorgu1['id']?>)"><?=$Sorgu1["baslik"]?></td>
                         <td onclick="OpenProject(<?=$Sorgu1['id']?>)"><?=$Sorgu1["baslamaTarih"]?></td>

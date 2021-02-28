@@ -100,3 +100,23 @@ function Edit(index) {
 function AddIMG(index) {
     window.location = "projeFotografEkle.php?KID="+index;
 }
+
+
+function deletePhoto(index) {
+    var txt;
+    var r = confirm("Bu kaydı silmek istediğinizie emin misin?");
+    if (r == true) {
+      window.location = "fotograflar.php?PID="+index;
+    } else {
+      txt = "You pressed Cancel!";
+    }
+}
+
+
+function tamamlandı(index) {
+    window.location = "projeler.php?tamamlandi="+index;
+}
+
+function devamEdiyor(index) {
+    window.location = "projeler.php?DevamEdiyor="+index;
+}

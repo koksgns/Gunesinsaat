@@ -57,24 +57,19 @@
         </div>
       </nav>
       
-      <div class="container my-5 text-center">
-      <h1>Kayıtlı Fotoğraflar</h1>
-      <hr class="w-75 mt-5 mb-4 m-auto ">
-      <div class="row photoPage justify-content-center">
-          <?php
-              foreach($SORGULAR as $Sorgu){
-          ?>
 
-            <div class="col-12 col-sm-6 col-md-4 p-5 border ">
-                <img src="../images/photo/<?=$Sorgu["IMG"]; ?>" alt="<?=$Sorgu["fotoAciklama"]; ?>">
-                <p><?=$Sorgu["fotoAciklama"]; ?></p>
-            </div>
-          <?php
-              }
-          ?>   
-             
-      </div>
-  </div>
+  <div class="container my-5">
+    <h1 class="text-center">Kayıtlı Fotoğraflar</h1>
+    <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
+      <div class="row text-center justify-content-center">        
+        <?php
+            foreach($SORGULAR as $Sorgu){ 
+          ?>
+        <div class="col-12 col-sm-6 col-md-4 projedetayfotolar my-3">
+          <img src="../images/photo/<?=$Sorgu["IMG"] ?>" class= "projeimgDetay" alt="<?=$Sorgu["fotoAciklama"]; ?>"> <br> <br>
+        </div><?php $sayac++; } ?>
+      </div> 
+    </div>
 
 
     

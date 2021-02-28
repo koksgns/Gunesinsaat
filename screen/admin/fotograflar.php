@@ -3,6 +3,28 @@ session_start();
 $UserID = $_SESSION["id"];
 if($UserID != ""){
   require("../../PHP/gereksinimler.php");
+
+  if(isset($_REQUEST["PID"])){
+    $PID   =  $_REQUEST["PID"];
+
+    
+    $SORGU2		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  fotograflar WHERE IMG= '$PID'"); 
+    $SORGU2->execute();
+    $SORGUSAYISI2		=	$SORGU2->rowCount();
+    $SORGULAR2	=	$SORGU2->fetch(PDO::FETCH_ASSOC);
+
+    if($SORGUSAYISI2>0){        
+        $id  =   $SORGULAR2["id"];
+        $KayitSil   =   $VeritabaniBaglantisi->query("DELETE FROM fotograflar WHERE id = '$id'");
+        if($KayitSil){
+            $message = "Kayıt Silindi";
+            echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
+        
+    }   
+  }
+
   $SORGU		=	$VeritabaniBaglantisi->prepare("SELECT * FROM  fotograflar "); 
   $SORGU->execute();
   $SORGUSAYISI		=	$SORGU->rowCount();
@@ -79,24 +101,20 @@ if($UserID != ""){
        </div>
    </div>
    <br>
-  <div class="container my-5 text-center">
-      <h1>Kayıtlı Fotoğraflar</h1>
-      <hr class="w-75 mt-5 mb-4 m-auto ">
-      <div class="row photoPage justify-content-center">
-          <?php
-              foreach($SORGULAR as $Sorgu){
+   <div class="container my-5">
+    <h1 class="text-center">Son Paylaşımlar</h1>
+    <hr class="w-75 mt-5 mb-4 m-auto justify-content-center">
+      <div class="row text-center justify-content-center">        
+        <?php
+            foreach($SORGULAR as $Sorgu){ 
+              $img=$Sorgu["IMG"];
           ?>
-
-            <div class="col-12 col-sm-6 col-md-4 p-2 border ">
-                <img src="../../images/photo/<?=$Sorgu["IMG"]; ?>" alt="<?=$Sorgu["fotoAciklama"]; ?>">
-                <p><?=$Sorgu["fotoAciklama"]; ?></p>
-            </div>
-          <?php
-              }
-          ?>   
-             
-      </div>
-  </div>
+        <div class="col-12 col-sm-6 col-md-4 projedetayfotolar my-3">
+          <img src="../../images/photo/<?=$Sorgu["IMG"] ?>" class= "projeimgDetay" alt="<?=$Sorgu["fotoAciklama"]; ?>"> <br> <br>
+          <p><?=$Sorgu["fotoAciklama"]; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-trash-alt" onclick="deletePhoto('<?=$img?>')">Sil</i></p> <br>
+        </div><?php } ?>
+      </div> 
+    </div>
 
   <?php
 require("footer.php");
