@@ -41,31 +41,31 @@ array_pop($projeFotolar);
 <body>
 
     <!--Navbar-->
-    <nav class="navbar navbardetay navbar-expand-lg navbar-light p-3" style="background-color: #529dd3;">
+    <nav class="navbar navbardetay navbar-expand-lg navbar-light p-3" style="background-color: #778f9b;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.php">Güneş İnşaat</a>
+          <a class="navbar-brand text-light" href="index.php">Güneş İnşaat</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../../index.php">Anasayfa</a>
+                <a class="nav-link text-light" aria-current="page" href="../../index.php">Anasayfa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="../">Projeler</a>
+                <a class="nav-link text-light active" href="../"><b>Projeler</b></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../hizmetlerimiz.php">Hizmetlerimiz</a>
+                <a class="nav-link text-light" href="../../hizmetlerimiz.php">Hizmetlerimiz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../hakkinda.php">Hakkımızda</a>
+                <a class="nav-link text-light" href="../../hakkinda.php">Hakkımızda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../iletisim.php">İletişim</a>
+                <a class="nav-link text-light" href="../../iletisim.php">İletişim</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../admin/">Giriş Yap</a>
+                <a class="nav-link text-light" href="../../admin/">Giriş Yap</a>
               </li>
             </ul>
             <span class="navbar-text">
@@ -124,7 +124,7 @@ array_pop($projeFotolar);
       </div> 
     </div>
 
-    <div class="container-fluid bg-dark my-5 text-center">
+    <div class="container-fluid  my-5 text-center" style="background-color: #778f9b;">
         &nbsp;
     </div>
     <!--FOOTER-->
@@ -136,7 +136,7 @@ array_pop($projeFotolar);
   $SORGULARFooter = array_reverse($SORGULARFooter);
   $sayacFooter =1;
 ?>
-<footer class="bg-dark pt-5 ">
+<footer class=" pt-5" style="background-color: #778f9b;">
     <div class="container text-white">
         <div class="row">
             <div class="col-md-4">
@@ -144,24 +144,24 @@ array_pop($projeFotolar);
             </div>
             <div class="col-md-3 mt-3">
                 <ul class="list-unstyled">
-                    <li class="mb-3 text-muted"><small>Şirket</small></li>
-                    <li><a href="../../index.php" class="text-white footer-text altcizgikaldir"> Anasayfa</li></a>
-                    <li><a href="../" class="text-white footer-text altcizgikaldir"> Projeler</li></a>
-                    <li><a href="../../hizmetlerimiz.php" class="text-white footer-text altcizgikaldir"> Hizmetlerimiz</li></a>
-                    <li><a href="../../hakkinda.php" class="text-white footer-text altcizgikaldir"> Hakkımızda</li></a>
-                    <li><a href="../../iletisim.php" class="text-white footer-text altcizgikaldir"> İletişim</li></a>
+                    <li class="mb-3"><small>Şirket</small></li>
+                    <li><a href="../../index.php" class=" footer-text altcizgikaldir"> Anasayfa</li></a>
+                    <li><a href="../" class="footer-text altcizgikaldir"> Projeler</li></a>
+                    <li><a href="../../hizmetlerimiz.php" class="footer-text altcizgikaldir"> Hizmetlerimiz</li></a>
+                    <li><a href="../../hakkinda.php" class="footer-text altcizgikaldir"> Hakkımızda</li></a>
+                    <li><a href="../../iletisim.php" class="footer-text altcizgikaldir"> İletişim</li></a>
                 </ul>
             </div>
             <div class="col-md-3 mt-3">
                 <ul class="list-unstyled">
-                    <li class="mb-3 text-muted"><small>Projeler</small></li>
+                    <li class="mb-3"><small>Projeler</small></li>
                     <?php
                         foreach($SORGULARFooter as $Sorgu){
                             if($sayacFooter == 6){
                                 break;
                             }
                     ?>
-                        <li><a href="index.php?PID=<?=$Sorgu["id"]?>" class="text-white footer-text altcizgikaldir"> <?php echo substr($Sorgu["baslik"],0,20); if(strlen($Sorgu["baslik"])>20){echo"...";} ?></li></a>
+                        <li><a href="index.php?PID=<?=$Sorgu["id"]?>" class="footer-text altcizgikaldir"> <?php echo substr($Sorgu["baslik"],0,20); if(strlen($Sorgu["baslik"])>20){echo"...";} ?></li></a>
                     <?php
                             $sayacFooter++;
                         }
@@ -169,12 +169,12 @@ array_pop($projeFotolar);
                 </ul>
             </div>
             <div class="col-md-2 mt-3 text-end social-logo">
-                <<a target="_blank" href="https://www.facebook.com/GÜNEŞ-Insaat-650970248400529/" class="text-white footer-text"><i class="fab fa-facebook-f fa-2x me-3"></i></a>                
+                <a target="_blank" href="https://www.facebook.com/GÜNEŞ-Insaat-650970248400529/" class="text-white footer-text"><i class="fab fa-facebook-f fa-2x me-3"></i></a>                
                 <a target="_blank" href="https://www.instagram.com/muratgunes522/" class="text-white footer-text"> <i class="fab fa-instagram fa-2x me-3"></i></a>
                 <a target="_blank" href="https://wa.me/905419346709?text=Merhaba%20Güneş%20İnşaat" class="text-white footer-text"> <i class="fab fa-whatsapp fa-2x me-3"></i></a>
             </div>
             <div class="clearfix text-muted text-center">
-                <p style="font-size: 14px; margin-top: 10px;" class="mb-3 ">Güneş İnşaat © Tüm Hakları Saklıdır. - Design: by <a href="https://www.instagram.com/koksgns/" class="altcizgikaldir text-success">KOKSGNS</a></p>
+            <p style="font-size: 14px; color: black; margin-top: 10px;" class="mb-3 ">Güneş İnşaat © Tüm Hakları Saklıdır. - Design: by <a href="https://www.instagram.com/koksgns/" class="altcizgikaldir text-white">KOKSGNS</a></p>
             </div>
         </div>
     </div>

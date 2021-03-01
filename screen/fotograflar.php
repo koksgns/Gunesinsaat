@@ -23,31 +23,31 @@
 </head>
 <body>
   <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #529dd3;">
+    <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #778f9b;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.php">Güneş İnşaat</a>
+          <a class="navbar-brand text-light" href="index.php">Güneş İnşaat</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="index.php">Anasayfa</a>
+                <a class="nav-link text-light" aria-current="page" href="index.php">Anasayfa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="proje/">Projeler</a>
+                <a class="nav-link text-light" href="proje/">Projeler</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="hizmetlerimiz.php">Hizmetlerimiz</a>
+                <a class="nav-link text-light" href="hizmetlerimiz.php">Hizmetlerimiz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="hakkinda.php">Hakkımızda</a>
+                <a class="nav-link text-light" href="hakkinda.php">Hakkımızda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="iletisim.php">İletişim</a>
+                <a class="nav-link text-light" href="iletisim.php">İletişim</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="admin/">Giriş Yap</a>
+                <a class="nav-link text-light" href="admin/">Giriş Yap</a>
               </li>
             </ul>
             <span class="navbar-text">
@@ -72,7 +72,7 @@
     </div>
 
 
-    
+    <div class="container-fluid my-5"  style=" background-color: #778f9b">&nbsp;</div>
 
 
     <!--FOOTER-->

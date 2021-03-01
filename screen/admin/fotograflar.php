@@ -47,28 +47,28 @@ if($UserID != ""){
 <body>
 
   <!--Navbar-->
-  <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #529dd3;">
+  <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #778f9b;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="../index.php">Güneş İnşaat</a>
+      <a class="navbar-brand text-light" href="../index.php">Güneş İnşaat</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home.php">Admin Paneli</a>
+            <a class="nav-link text-light " aria-current="page" href="home.php">Admin Paneli</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="projeler.php">Projeler</a>
+            <a class="nav-link text-light" href="projeler.php">Projeler</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="fotograflar.php">Fotoğraflar</a>
+            <a class="nav-link text-light active" href="fotograflar.php"><b>Fotoğraflar</b></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="ayarlar.php">Ayarlar</a>
+            <a class="nav-link text-light" href="ayarlar.php">Ayarlar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cikis.php">Çıkış Yap</a>
+            <a class="nav-link text-light" href="cikis.php">Çıkış Yap</a>
           </li>
         </ul>
         <span class="navbar-text">
@@ -114,6 +114,9 @@ if($UserID != ""){
           <p><?=$Sorgu["fotoAciklama"]; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="far fa-trash-alt" onclick="deletePhoto('<?=$img?>')">Sil</i></p> <br>
         </div><?php } ?>
       </div> 
+    </div>
+    <div class="container-fluid my-5 text-center"  style=" background-color: #778f9b">
+        &nbsp;
     </div>
 
   <?php

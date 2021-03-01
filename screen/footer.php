@@ -7,7 +7,7 @@
   $SORGULARFooter = array_reverse($SORGULARFooter);
   $sayacFooter =1;
 ?>
-<footer class="bg-dark pt-5 ">
+<footer class=" pt-5 " style=" background-color: #778f9b">
     <div class="container text-white">
         <div class="row">
             <div class="col-md-4">
@@ -15,24 +15,24 @@
             </div>
             <div class="col-md-3 mt-3">
                 <ul class="list-unstyled">
-                    <li class="mb-3 text-muted"><small>Şirket</small></li>
-                    <li><a href="index.php" class="text-white footer-text altcizgikaldir"> Anasayfa</li></a>
-                    <li><a href="proje/" class="text-white footer-text altcizgikaldir"> Projeler</li></a>
-                    <li><a href="hizmetlerimiz.php" class="text-white footer-text altcizgikaldir"> Hizmetlerimiz</li></a>
-                    <li><a href="hakkinda.php" class="text-white footer-text altcizgikaldir"> Hakkımızda</li></a>
-                    <li><a href="iletisim.php" class="text-white footer-text altcizgikaldir"> İletişim</li></a>
+                    <li class="mb-3 "><small>Şirket</small></li>
+                    <li><a href="index.php" class=" footer-text altcizgikaldir"> Anasayfa</li></a>
+                    <li><a href="proje/" class=" footer-text altcizgikaldir"> Projeler</li></a>
+                    <li><a href="hizmetlerimiz.php" class="footer-text altcizgikaldir"> Hizmetlerimiz</li></a>
+                    <li><a href="hakkinda.php" class=" footer-text altcizgikaldir"> Hakkımızda</li></a>
+                    <li><a href="iletisim.php" class="footer-text altcizgikaldir"> İletişim</li></a>
                 </ul>
             </div>
             <div class="col-md-3 mt-3">
                 <ul class="list-unstyled">
-                    <li class="mb-3 text-muted"><small>Projeler</small></li>
+                    <li class="mb-3 "><small>Projeler</small></li>
                     <?php
                         foreach($SORGULARFooter as $Sorgu){
                             if($sayacFooter == 6){
                                 break;
                             }
                     ?>
-                        <li><a href="proje/projedetay/index.php?PID=<?=$Sorgu["id"]?>" class="text-white footer-text altcizgikaldir"> <?php echo substr($Sorgu["baslik"],0,20); if(strlen($Sorgu["baslik"])>20){echo"...";} ?></li></a>
+                        <li><a href="proje/projedetay/index.php?PID=<?=$Sorgu["id"]?>" class="footer-text altcizgikaldir"> <?php echo substr($Sorgu["baslik"],0,20); if(strlen($Sorgu["baslik"])>20){echo"...";} ?></li></a>
                     <?php
                             $sayacFooter++;
                         }
@@ -45,7 +45,7 @@
                 <a target="_blank" href="https://wa.me/905419346709?text=Merhaba%20Güneş%20İnşaat" class="text-white footer-text"> <i class="fab fa-whatsapp fa-2x me-3"></i></a>
             </div>
             <div class="clearfix text-muted text-center">
-                <p style="font-size: 14px; margin-top: 10px;" class="mb-3 ">Güneş İnşaat © Tüm Hakları Saklıdır. - Design: by <a href="https://www.instagram.com/koksgns/" class="altcizgikaldir text-success">KOKSGNS</a></p>
+                <p style="font-size: 14px; color: black; margin-top: 10px;" class="mb-3 ">Güneş İnşaat © Tüm Hakları Saklıdır. - Design: by <a href="https://www.instagram.com/koksgns/" class="altcizgikaldir text-white">KOKSGNS</a></p>
             </div>
         </div>
     </div>

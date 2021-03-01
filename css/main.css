@@ -1,5 +1,5 @@
 body{
-    background-color: blanchedalmond;
+    background-color: #f9eae8;
 }
 .navbar{
     padding-left: 5%  !important;
@@ -60,7 +60,7 @@ body{
 }
 .caption{
     height: 100%;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, .3);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +128,7 @@ body{
     width: 250px;
 }
 .projedetaybaslik{
-    background-color: rgb(174, 187, 53);
+    background-color: #778f9b;
     border-radius: 20px;
 }
 
@@ -164,6 +164,7 @@ body{
 
 .giris{
     border-radius: 50px;
+    background-color: #778f9b;
 }
 /* HAKKIMIZDA*/
 
@@ -253,4 +254,10 @@ body{
 
 .photoPage img{
     width: 100%;
+}
+
+
+footer li a{
+    font-weight: bold;
+    color: black !important;
 }

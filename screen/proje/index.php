@@ -31,31 +31,31 @@
 <body>
 
     <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light p-3" style="background-color: #529dd3;">
+    <nav class="navbar navbar-expand-lg navbar-light p-3" style=" background-color: #778f9b">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.php">Güneş İnşaat</a>
+          <a class="navbar-brand text-light" href="index.php">Güneş İnşaat</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../index.php">Anasayfa</a>
+                <a class="nav-link text-light" aria-current="page" href="../index.php">Anasayfa</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="index.php">Projeler</a>
+                <a class="nav-link text-light active" href="index.php"><b>Projeler</b></a>
               </li>              
               <li class="nav-item">
-                <a class="nav-link" href="../hizmetlerimiz.php">Hizmetlerimiz</a>
+                <a class="nav-link text-light" href="../hizmetlerimiz.php">Hizmetlerimiz</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../hakkinda.php">Hakkımızda</a>
+                <a class="nav-link text-light" href="../hakkinda.php">Hakkımızda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../iletisim.php">İletişim</a>
+                <a class="nav-link text-light" href="../iletisim.php">İletişim</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../admin/">Giriş Yap</a>
+                <a class="nav-link text-light" href="../admin/">Giriş Yap</a>
               </li>
             </ul>
             <span class="navbar-text">
@@ -72,7 +72,7 @@
             <p>Hayallerinizi süsleyen yapıların <b>Güneş İnşaat</b> ile canlandırmaya ne dersiniz?</p>
         </div>
     </section>
-    <div class="container-fluid bg-dark my-5 text-center">
+    <div class="container-fluid my-5 text-center" style="background-color: #778f9b;">
         &nbsp;
       </div>
     
@@ -85,7 +85,7 @@
           foreach($SORGULAR as $Sorgu){
         ?>
        
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
+        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: #ffab91">
           <a class="altcizgikaldir" href="projedetay/index.php?PID=<?=$Sorgu["id"]?>">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
@@ -118,7 +118,7 @@
           foreach($SORGULAR1 as $Sorgu){
         ?>
        
-        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: coral;">
+        <div class="col-11 col-md-5 m-3 projelercerceve" style="background-color: #ffab91">
           <a class="altcizgikaldir" href="projedetay/index.php?PID=<?=$Sorgu["id"]?>">
           <div class="row p-2">
             <div class="col-12 text-center text-lg-left  col-xl-6">
@@ -141,7 +141,7 @@
     </div>
 
 
-    <div class="container-fluid my-5" style="background-color: rgb(236, 185, 118);">
+    <div class="container-fluid my-5" style="background-color: #ffab91">
       <div class="row justify-content-around p-5">
         <div class="col-5 text-center">
           <h3>Gerçekleşen Projeler</h3>
@@ -154,7 +154,7 @@
       </div>
 
     </div>
-    <div class="container-fluid bg-dark my-5 text-center">
+    <div class="container-fluid my-5 text-center" style="background-color: #778f9b;">
         &nbsp;
       </div>
 
@@ -167,7 +167,7 @@
   $SORGULARFooter = array_reverse($SORGULARFooter);
   $sayacFooter =1;
 ?>
-<footer class="bg-dark pt-5 ">
+<footer class="pt-5" style="background-color: #778f9b;">
     <div class="container text-white">
         <div class="row">
             <div class="col-md-4">
@@ -175,24 +175,24 @@
             </div>
             <div class="col-md-3 mt-3">
                 <ul class="list-unstyled">
-                    <li class="mb-3 text-muted"><small>Şirket</small></li>
-                    <li><a href="../index.php" class="text-white footer-text altcizgikaldir"> Anasayfa</li></a>
-                    <li><a href="../proje/" class="text-white footer-text altcizgikaldir"> Projeler</li></a>
-                    <li><a href="../hizmetlerimiz.php" class="text-white footer-text altcizgikaldir"> Hizmetlerimiz</li></a>
-                    <li><a href="../hakkinda.php" class="text-white footer-text altcizgikaldir"> Hakkımızda</li></a>
-                    <li><a href="../iletisim.php" class="text-white footer-text altcizgikaldir"> İletişim</li></a>
+                    <li class="mb-3 "><small>Şirket</small></li>
+                    <li><a href="../index.php" class=" footer-text altcizgikaldir"> Anasayfa</li></a>
+                    <li><a href="../proje/" class="footer-text altcizgikaldir"> Projeler</li></a>
+                    <li><a href="../hizmetlerimiz.php" class="footer-text altcizgikaldir"> Hizmetlerimiz</li></a>
+                    <li><a href="../hakkinda.php" class="footer-text altcizgikaldir"> Hakkımızda</li></a>
+                    <li><a href="../iletisim.php" class="footer-text altcizgikaldir"> İletişim</li></a>
                 </ul>
             </div>
             <div class="col-md-3 mt-3">
                 <ul class="list-unstyled">
-                    <li class="mb-3 text-muted"><small>Projeler</small></li>
+                    <li class="mb-3 "><small>Projeler</small></li>
                     <?php
                         foreach($SORGULARFooter as $Sorgu){
                             if($sayacFooter == 6){
                                 break;
                             }
                     ?>
-                        <li><a href="projedetay/index.php?PID=<?=$Sorgu["id"]?>" class="text-white footer-text altcizgikaldir"> <?php echo substr($Sorgu["baslik"],0,20); if(strlen($Sorgu["baslik"])>20){echo"...";} ?></li></a>
+                        <li><a href="projedetay/index.php?PID=<?=$Sorgu["id"]?>" class="footer-text altcizgikaldir"> <?php echo substr($Sorgu["baslik"],0,20); if(strlen($Sorgu["baslik"])>20){echo"...";} ?></li></a>
                     <?php
                             $sayacFooter++;
                         }
@@ -205,7 +205,7 @@
                 <a target="_blank" href="https://wa.me/905419346709?text=Merhaba%20Güneş%20İnşaat" class="text-white footer-text"> <i class="fab fa-whatsapp fa-2x me-3"></i></a>
             </div>
             <div class="clearfix text-muted text-center">
-                <p style="font-size: 14px; margin-top: 10px;" class="mb-3 ">Güneş İnşaat © Tüm Hakları Saklıdır. - Design: by <a href="https://www.instagram.com/koksgns/" class="altcizgikaldir text-success">KOKSGNS</a></p>
+            <p style="font-size: 14px; color: black; margin-top: 10px;" class="mb-3 ">Güneş İnşaat © Tüm Hakları Saklıdır. - Design: by <a href="https://www.instagram.com/koksgns/" class="altcizgikaldir text-white">KOKSGNS</a></p>
             </div>
         </div>
     </div>

@@ -50,13 +50,13 @@ if(isset($_POST["Pass"]) && isset($_POST["User"])){
     <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
-<body class="bg-secondary">
+<body >
     <div class="container my-5">
-        <div class="text-center my-auto giris bg-dark">
+        <div class="text-center my-auto giris">
             <a href="../"><img src="../../images/logo/logo.png" alt="logo" class="my-5"></a>
         </div>
         <br><br>
-        <div class="text-center bg-dark giris p-5">
+        <div class="text-center giris p-5">
             <form action="index.php" method="POST">
                 <div class="form-group">
                     <input type="text" required name="User" placeholder="Kullanıcı Adınızı veya E-posta Adresinizi Giriniz" class="w-50 m-auto form-control">
