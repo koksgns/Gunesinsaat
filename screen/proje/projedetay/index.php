@@ -43,7 +43,7 @@ array_pop($projeFotolar);
     <!--Navbar-->
     <nav class="navbar navbardetay navbar-expand-lg navbar-light p-3" style="background-color: #778f9b;">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="index.php">Güneş İnşaat</a>
+          <a class="navbar-brand text-light" href="../../index.php">Güneş İnşaat</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

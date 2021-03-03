@@ -33,7 +33,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light p-3" style=" background-color: #778f9b">
         <div class="container-fluid">
-          <a class="navbar-brand text-light" href="index.php">Güneş İnşaat</a>
+          <a class="navbar-brand text-light" href="../index.php">Güneş İnşaat</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -200,7 +200,7 @@
                 </ul>
             </div>
             <div class="col-md-2 mt-3 text-end social-logo">
-                <<a target="_blank" href="https://www.facebook.com/GÜNEŞ-Insaat-650970248400529/" class="text-white footer-text"><i class="fab fa-facebook-f fa-2x me-3"></i></a>                
+                <a target="_blank" href="https://www.facebook.com/GÜNEŞ-Insaat-650970248400529/" class="text-white footer-text"><i class="fab fa-facebook-f fa-2x me-3"></i></a>                
                 <a target="_blank" href="https://www.instagram.com/muratgunes522/" class="text-white footer-text"> <i class="fab fa-instagram fa-2x me-3"></i></a>
                 <a target="_blank" href="https://wa.me/905419346709?text=Merhaba%20Güneş%20İnşaat" class="text-white footer-text"> <i class="fab fa-whatsapp fa-2x me-3"></i></a>
             </div>
